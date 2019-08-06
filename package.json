@@ -1,0 +1,16 @@
+{
+  "name": "test_acts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SAV2",
+  "license": "MIT",
+  "dependencies": {
+    "docxtemplater": "^3.11.4",
+    "express": "^4.17.1",
+    "jszip": "^2.6.1"
+  }
+}

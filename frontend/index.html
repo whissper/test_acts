@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>actS </title>
+	
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.ru.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+	<script type="text/javascript" src="js/inputmask.min.js"></script>
+	<script type="text/javascript" src="js/jquery.inputmask.min.js"></script>
+	<script type="text/javascript" src="js/jquery.suggestions.min.js"></script>
+	<script type="text/javascript" src="js/jquery.twbsPagination.js"></script>
+	<script defer type="text/javascript" src="fontawesome-free-5_0_13/svg-with-js/js/fontawesome-all.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-datepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap-tagsinput.css" />
+	<link rel="stylesheet" type="text/css" href="styles/suggestions.css" />
+	
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<script type="text/javascript" src="js/own.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid sav2-top-header">
+	<div class="row">
+		<div class="col-xs-12 sav2-service-title">
+			<div class="item item1">actS</div>
+			<div class="item item2"></div>
+			<div class="item item3">&nbsp;BETA</div>
+			<div class="item item4"><i class="fab fa-node fa-4x"></i></div>
+		</div>
+		
+		
+	</div><!-- /row -->
+</div><!-- /container -->
+
+<div class="container sav2-main-cont">
+	<div class="row">
+		<div class="col-md-12 sav2-workspace">
+			<!-- DYNAMIC -->
+			<style>		
+			.form-header {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 0 20px 0;
+			}
+			
+			.sav2-group {
+				border: 1px solid #eee;
+				border-radius: 5px;
+				padding: 10px 10px 0px 10px;
+			}
+			
+			.sav2-date-input {
+				max-width: 150px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.sav2-date-input-2 {
+				max-width: 240px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.sav2-input {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.form-inline .btn-group {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.footer {
+				height: 150px;
+			}
+			
+			.btn-sub {
+				margin-bottom: 25px;
+			}
+			</style>
+			<div class="row">
+			
+				<div class="form-group col-md-3">
+					<button type="button" class="btn btn-default back-to-log">Вернуться в журнал &nbsp;<i class="fas fa-external-link-alt"></i></button>
+				</div>
+			
+			</div>
+			<div class="form-header">
+				<p>бланки актов по регламентным мероприятиям, проводимым над системами теплопотребления</p>
+			</div>
+			<hr />
+			<form>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="docDate">Дата акта:</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+							<input type="text" class="form-control" id="docDate">
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="docTown">Город: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-building"></i></span>
+							<select class="form-control" id="docTown">
+								<option value="1">г. Ухта</option>
+								<option value="2">г. Сосногорск</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="agentRank">Представитель АО «Коми энергосбытовая компания»: </label>
+						<div class="input-group">
+							<span class="input-group-addon">Должность </span>
+							<select class="form-control" id="agentRank">
+								<option value="1">инженер</option>
+								<option value="2">инженер 1-й категории</option>
+								<option value="3">ведущий инженер</option>
+								<option value="4">главный инженер</option>
+								<option value="5">техник</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="agentFio">&nbsp;</label>
+						<div class="input-group">
+							<span class="input-group-addon">ФИО </span>
+							<input id="agentFio" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				
+				<hr />
+			
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="consumerName">Потребитель: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-user-tie"></i></span>
+							<input type="text" class="form-control" id="consumerName">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="consumerAddress">Адрес: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+							<input type="text" class="form-control" id="consumerAddress">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="objectName">Объект: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-building"></i></span>
+							<input type="text" class="form-control" id="objectName">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="objectAddress">Адрес объекта: </label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+							<input type="text" class="form-control" id="objectAddress">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="indicationDate">Дата снятия показаний ПУ:</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+							<input type="text" class="form-control" id="indicationDate">
+						</div>
+					</div>
+				</div>
+				
+				<hr />
+			</form>
+			<div class="row">
+				<div class="col-md-12">
+					<form id="form1" action="/acts/getacts/" method="post" target="_blank">
+						<input id="json1" name="jsonStr" type="hidden" value="">
+						<input id="printtype1" name="printtype" type="hidden" value="">
+					</form>										
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-lg btn-info btn-block btn-sub" printtype="1" id="btnsend1">проверка ГВС <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-lg btn-info btn-block btn-sub" printtype="2" id="btnsend2">проверка ТЕПЛО <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-lg btn-info btn-block btn-sub" printtype="3" id="btnsend3">обследование <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-lg btn-info btn-block btn-sub" printtype="4" id="btnsend4">опрессовка <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-lg btn-info btn-block btn-sub" printtype="5" id="btnsend5">промывка <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-lg btn-info btn-block btn-sub" printtype="6" id="btnsend6">ревизия ДУ <i class="fas fa-angle-double-right"></i> <i class="fas fa-file-word"></i></button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="footer"></div>
+			</div>
+			<!-- DYNAMIC -->
+		</div><!-- /col -->
+	 </div><!-- /row -->
+</div><!-- /container -->
+
+<div id="light_cover">
+	<div class="light_cover_info">
+		<i class="fas fa-spinner fa-pulse fa-7x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+</div>
+
+<script>
+$('#docDate').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#indicationDate').datepicker({
+	format: "dd.mm.yyyy",
+	viewMode: "months", 
+	minViewMode: "days",
+	language: 'ru'
+});
+
+$('#consumerAddress', document).suggestions({
+	token: 'aa87679e3bfbbdaca05a44aa93ad6af10d54045a',
+	type: 'ADDRESS',
+	count: 7,
+	onSelect: function(suggestion) {
+		
+	}
+});
+
+$('#objectAddress', document).suggestions({
+	token: 'aa87679e3bfbbdaca05a44aa93ad6af10d54045a',
+	type: 'ADDRESS',
+	count: 7,
+	onSelect: function(suggestion) {
+		
+	}
+});
+
+</script>
+
+</body>
+
+</html>
