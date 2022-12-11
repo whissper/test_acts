@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "docxtemplater": "^3.11.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jszip": "^2.6.1"
   }
 }
